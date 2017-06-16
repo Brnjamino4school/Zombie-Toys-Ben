@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class PlayerHealth : MonoBehaviour
 {
 	[Header("Health Properties")]
-	[SerializeField] int maxHealth = 100;				//Player's maximum health
+	public int maxHealth = 100;				//Player's maximum health
 	[SerializeField] AudioClip deathClip = null;		//Sound clip for the player's death
 
 	[Header("Script References")]
@@ -19,12 +19,12 @@ public class PlayerHealth : MonoBehaviour
 	
 	[Header("UI")]
 	[SerializeField] FlashFade damageImage;				//Reference to the FlashFade script on the DamageImage UI element
-	[SerializeField] Slider healthSlider;				//The slider that will represent the player's health
+	public Slider healthSlider;				//The slider that will represent the player's health
 		
 	[Header("Debugging Properties")]				
 	[SerializeField] bool isInvulnerable = false;		//Is the player invulnerable? Useful for debugging so the player won't take damage
 
-	int currentHealth;									//The current health of the player
+	public int currentHealth;									//The current health of the player
 
 	//Reset() defines the default values for properties in the inspector
 	void Reset ()

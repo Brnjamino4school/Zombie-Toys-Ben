@@ -32,7 +32,7 @@ public class EnemyHealth : MonoBehaviour
 	[Header("Debugging Properties")]
 	[SerializeField] bool isInvulnerable;				//Is the enemy immune to all damage?
 
-	int currentHealth;									//Current health amount of enemy
+	public int currentHealth;									//Current health amount of enemy
 	bool isSinking;										//Is the enemy currently sinking?
 
 	//Reset() defines the default values for properties in the inspector
@@ -117,6 +117,7 @@ public class EnemyHealth : MonoBehaviour
 		GameManager.Instance.AddScore(scoreValue);
 		//Call the TurnOff() method after a period of time
 		Invoke("TurnOff", deathEffectTime);
+        
 	}
 
 	//Called once the enemy's "defeated" effects have finished playing

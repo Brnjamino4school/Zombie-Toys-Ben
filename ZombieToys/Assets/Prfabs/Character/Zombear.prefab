@@ -59,6 +59,7 @@ GameObject:
   - component: {fileID: 114477811735191018}
   - component: {fileID: 114125770882772518}
   - component: {fileID: 114971210506092092}
+  - component: {fileID: 82807972384189278}
   m_Layer: 9
   m_Name: Zombear
   m_TagString: Untagged
@@ -107,6 +108,87 @@ Transform:
   m_Father: {fileID: 4231416494883128}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &82807972384189278
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1810670899674378}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 8434b04884c414ac6b468e10945685e6,
+    type: 2}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!95 &95364258791046058
 Animator:
   serializedVersion: 3
@@ -137,7 +219,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SlimeDebuff: {fileID: 0}
   timeBetweenAttacks: 0.5
-  attackDamage: 10
+  attackDamage: 20
   animator: {fileID: 95364258791046058}
 --- !u!114 &114477811735191018
 MonoBehaviour:
@@ -166,19 +248,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Spawner: {fileID: 0}
-  maxHealth: 100
-  scoreValue: 10
+  maxHealth: 125
+  scoreValue: 25
   sinkSpeed: 2.5
   deathEffectTime: 2
-  deathClip: {fileID: 0}
-  hurtClip: {fileID: 0}
+  deathClip: {fileID: 8300000, guid: 62366b8d2c37a49dca550841c741317f, type: 3}
+  hurtClip: {fileID: 8300000, guid: 1d4840678e677424b8921716c72397ea, type: 3}
   enemyAttack: {fileID: 114125770882772518}
   enemyMovement: {fileID: 114477811735191018}
   animator: {fileID: 95364258791046058}
-  audioSource: {fileID: 0}
+  audioSource: {fileID: 82807972384189278}
   capsuleCollider: {fileID: 136095763741931292}
   hitParticles: {fileID: 198896736318925670}
   isInvulnerable: 0
+  currentHealth: 0
 --- !u!135 &135034806078850662
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -256,7 +339,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 1810670899674378}
   m_Enabled: 1
   m_Radius: 0.7
-  m_Speed: 4.5
+  m_Speed: 6
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
